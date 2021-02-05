@@ -5,18 +5,25 @@ using namespace std;
 
 void merge(int[], int, int, int);
 
-void mergeSortRecursive(int arr[], int low, int high)
+void mergeSortIterative(int arr[], int n)
 {
-    if (low >= high)
+    int p, low, high, mid, i;
+
+    for (p = 2; p <= n; p = p * 2) //passes
     {
-        return; //returns recursively
+        for (i = 0; i + p - 1 < n; i = i + p)
+        {
+            low = i;
+            high = i + p - 1;
+            mid = (low + high) / 2;
+            merge(arr, low, mid, high);
+        }
     }
+    if (p / 2 < n)
+    {
 
-    int mid = low + (high - low) / 2; // middle index of array
-
-    mergeSortRecursive(arr, low, mid);      //Recursively call mergeSort on left subarray
-    mergeSortRecursive(arr, mid + 1, high); //Recursively call mergeSort on right subarray
-    merge(arr, low, mid, high);             //merge the left and the right subarray
+        merge(arr, 0, p / 2 - 1, n);
+    }
 }
 
 void display(int *array, int size)
@@ -44,7 +51,7 @@ int main()
 
     cout << "Array before Sorting: ";
     display(arr, n);
-    mergeSortRecursive(arr, 0, n - 1); //(n-1) for last index
+    mergeSortIterative(arr, n);
     cout << "Array after Sorting: ";
     display(arr, n);
 
