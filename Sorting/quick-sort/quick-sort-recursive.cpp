@@ -16,7 +16,7 @@ void quickSortRecursive(int arr[], int low, int high)
     if (low < high)
     {
         //partition the array
-        int pivot = partition_rand(arr, low, high); // change the partition function to partition_low/mid/high/rand to change the starting pivot position
+        int pivot = partition_low(arr, low, high); // change the partition function to partition_low/mid/high/rand to change the starting pivot position
 
         //sort the sub arrays independently
         quickSortRecursive(arr, low, pivot - 1);
