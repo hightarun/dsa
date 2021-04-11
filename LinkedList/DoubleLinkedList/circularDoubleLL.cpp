@@ -359,6 +359,7 @@ void double_clist::display()
 {
     int i;
     struct node *s;
+    cout << "\n\n";
     if (start == last && start == NULL)
     {
         cout << "The List is empty, nothing to display" << endl;
@@ -370,7 +371,8 @@ void double_clist::display()
         cout << s->info << "<->";
         s = s->next;
     }
-    cout << s->info << endl;
+    cout << s->info << "\n\n\n";
+    system("PAUSE");
 }
 
 //Reverse Doubly Circular Linked List

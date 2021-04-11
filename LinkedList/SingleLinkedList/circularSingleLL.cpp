@@ -265,6 +265,7 @@ void singleCLL::display_list()
         cout << "List is empty, nothing to display" << endl;
         return;
     }
+    cout << "\n\n";
     s = last->next;
     cout << "Circular Link List: " << endl;
     while (s != last)
@@ -273,6 +274,7 @@ void singleCLL::display_list()
         s = s->next;
     }
     cout << s->info << endl;
+    system("PAUSE");
 }
 
 // Update Circular Link List

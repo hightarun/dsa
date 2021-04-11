@@ -379,6 +379,7 @@ void singleLL::display()
         cout << "The List is Empty" << endl;
         return;
     }
+    cout << "\n\n";
     temp = start;
     cout << "Elements of list are: " << endl;
     while (temp != NULL)
@@ -387,4 +388,5 @@ void singleLL::display()
         temp = temp->next;
     }
     cout << "NULL" << endl;
+    system("PAUSE");
 }

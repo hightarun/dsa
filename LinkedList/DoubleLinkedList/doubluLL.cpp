@@ -243,6 +243,7 @@ void doubleLL::display_dlist()
         cout << "List empty,nothing to display" << endl;
         return;
     }
+    cout << "\n\n";
     q = start;
     cout << "The Doubly Link List is :" << endl;
     while (q != NULL)
@@ -251,6 +252,7 @@ void doubleLL::display_dlist()
         q = q->next;
     }
     cout << "NULL" << endl;
+    system("PAUSE");
 }
 
 //Number of elements in Doubly Link List
