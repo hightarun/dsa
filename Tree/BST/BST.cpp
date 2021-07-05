@@ -146,13 +146,14 @@ public:
 
     TreeNode *iterativeSearch(int v)
     {
+        TreeNode *temp = root;
         if (root == NULL || root->value == v)
         {
             return root;
         }
         else
         {
-            TreeNode *temp = root;
+
             while (temp != NULL)
             {
                 if (v == temp->value)
@@ -169,6 +170,7 @@ public:
                 }
             }
         }
+        return temp;
     }
 
     TreeNode *recursiveSearch(TreeNode *r, int val)
@@ -244,6 +246,9 @@ int main()
         cout << "1. insert node" << endl;
         cout << "2. Traverse Node" << endl;
         cout << "3. Search Node" << endl;
+        cout << "4. Find Minimum Node" << endl;
+        cout << "5. Find Maximum Node" << endl;
+        cout << "6. Delete a Node" << endl;
         cin >> option;
         TreeNode *newNode = new TreeNode();
         switch (option)
@@ -276,6 +281,30 @@ int main()
             else
             {
                 cout << "Value not found" << endl;
+            }
+            break;
+        case 4:
+
+            cout << "\n Minimum Valued Node is : " << endl;
+            newNode = obj.minValueNode(obj.root);
+            cout << newNode->value << endl;
+            break;
+        case 5:
+
+            cout << "\n Maximum Valued Node is : " << endl;
+            newNode = obj.maxValueNode(obj.root);
+            cout << newNode->value << endl;
+            break;
+        case 6:
+            cout << "Enter the Value to be deleted : " << endl;
+            cin >> val;
+            if ((obj.deleteNode(obj.root, val)) != NULL)
+            {
+                cout << "value deleted " << endl;
+            }
+            else
+            {
+                cout << "value is not present." << endl;
             }
             break;
         default:
