@@ -15,15 +15,14 @@ int main()
 
     for (int i = rows; i >= 1; i--)
     {
-        for (int j = rows - 1; j >= i; j--)
+        for (int j = rows; j >= i; j--)
         {
             cout << " ";
         }
-        for (int k = 1; k <= maxStars; k++)
+        for (int k = 1; k <= 2 * i - 1; k++)
         {
             cout << "*";
         }
-        maxStars -= 2;
         cout << endl;
     }
     return 0;
